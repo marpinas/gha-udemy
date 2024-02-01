@@ -18,5 +18,8 @@ jobs:
         run: |
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
+      - name: Inspeccionar steps
+        id: stepsContext
+        run: echo "${{ toJSON(steps) }}"
       - name: Filtro de objeto
-        run: echo "${{  join(github.event.commits.*.message, ',') }}"
+        run: echo "${{  join(steps.*.conclusion) }}"
