@@ -1,0 +1,16 @@
+name: 13b - Ejercicio javascript saluda
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  uso-js:
+    runs-on: ubuntu-latest
+    name: Uso acción javascript
+    steps:
+      - id: javascript
+        uses: brainsdevops/gha-javascript-hola@v1
+        with:
+          nombre: 'Juan'
+      - name: El saludo
+        run: echo "${{steps.javascript.outputs.saludo}}"
