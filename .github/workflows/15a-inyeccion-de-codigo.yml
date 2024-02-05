@@ -6,9 +6,8 @@ on:
 jobs:
   inyeccion:
     runs-on: ubuntu-latest
-    env:
-      ISSUE_TITLE: ${{ github.event.issue.title }}
     steps:
       - run: |
-          echo ${env.ISSUE_TITLE}
+          title="${{ github.event.issue.title }}"
+          echo ${title}
 
