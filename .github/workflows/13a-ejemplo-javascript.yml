@@ -9,7 +9,7 @@ jobs:
     name: Uso acción javascript
     steps:
       - id: javascript
-        uses: BrainsDevOps/gha-javascript-dice@v1
+        uses: brainsdevops/gha-javascript-dice@v1
         with:
           numero-dados: 'dos'
       - run: echo dado 1 es ${{steps.javascript.outputs.dado1}}
