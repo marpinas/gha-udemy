@@ -6,6 +6,9 @@ on:
 jobs:
   prueba-permisos:
     name: Probar permisos
+    permissions:
+      contents: read
+      issues: read
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
