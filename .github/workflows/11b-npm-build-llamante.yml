@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    uses: ./.github/workflows/11b-npm-build-llamado.yml # uses: owner/repo@version
+    uses: ./.github/workflows/11b-npm-build-llamado.yml
     with:
       versiones-node: "['16','18','20']"
   deploy:
