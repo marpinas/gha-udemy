@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   expresiones:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Operadores
         id: operadores
