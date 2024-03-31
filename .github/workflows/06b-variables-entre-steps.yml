@@ -1,0 +1,19 @@
+name: 06b - Variables entre steps
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+env:
+jobs:
+  the-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generar número aleatorio
+        run: echo "NUM_ALEATORIO=$((1 + RANDOM % 6))" >> "$GITHUB_ENV"
+      # Escapar : usando format
+      - name: Leer resultado
+        run:  echo ${{format('El valor del dado es{0} {1}', ':', env.NUM_ALEATORIO)}}
+      #  Escapar : usando cadena de texto multilínea
+      # - name: Leer resultado
+      #   run: |
+      #     echo "El valor del dado es: ${{ env.NUM_ALEATORIO }}"
