@@ -9,7 +9,8 @@ jobs:
     name: Job para probar jobs compuestos
     steps:
       - id: compuesta
-        uses: BrainsDevOps/gha-composite-action@v1
+       # uses: BrainsDevOps/gha-composite-action@v1 
+        uses: marpinas/gha-composite-action@v1
         with:
           numero-dados: 'uno'
       - run: echo dado 1 es ${{steps.compuesta.outputs.dado1}}
