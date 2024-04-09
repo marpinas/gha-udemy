@@ -1,0 +1,16 @@
+name: 13a - Ejemplo de acción javascript
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  uso-compuesto:
+    runs-on: ubuntu-latest
+    name: Uso acción javascript
+    steps:
+      - id: javascript
+        uses: brainsdevops/gha-javascript-dice@v1
+        with:
+          numero-dados: 'dos'
+      - run: echo dado 1 es ${{steps.javascript.outputs.dado1}}
+      - run: echo dado 2 es ${{steps.javascript.outputs.dado2}}
